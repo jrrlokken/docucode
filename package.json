@@ -6,5 +6,8 @@
   },
   "scripts": {
     "start": "lerna run start --parallel"
+  },
+  "dependencies": {
+    "use-local-storage": "^2.3.6"
   }
 }

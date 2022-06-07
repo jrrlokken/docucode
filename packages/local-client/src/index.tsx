@@ -1,11 +1,19 @@
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import useLocalStorage from "use-local-storage";
+
 import { store } from "./state";
 import CellList from "./components/cell-list";
 import Header from "./components/header";
 
 import "bulmaswatch/superhero/bulmaswatch.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const [theme, setTheme] = useLocalStorage(
+  "theme",
+  defaultDark ? "dark" : "light"
+);
 
 const App = () => {
   return (
