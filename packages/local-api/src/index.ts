@@ -1,5 +1,4 @@
 import express from "express";
-import cors from "cors";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import path from "path";
 import { createCellsRouter } from "./routes/cells";
@@ -17,7 +16,7 @@ export const serve = (
   if (useProxy) {
     app.use(
       createProxyMiddleware({
-        target: "http://localhost:3000",
+        target: "http://localhost:4000",
         ws: true,
         logLevel: "silent",
       })
@@ -30,6 +29,6 @@ export const serve = (
   }
 
   return new Promise<void>((resolve, reject) => {
-    app.listen(port, resolve).on("error", reject);
+    app.listen(4000, resolve).on("error", reject);
   });
 };
