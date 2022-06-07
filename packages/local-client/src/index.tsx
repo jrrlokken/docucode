@@ -9,13 +9,17 @@ import Header from "./components/header";
 import "bulmaswatch/superhero/bulmaswatch.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const [theme, setTheme] = useLocalStorage(
-  "theme",
-  defaultDark ? "dark" : "light"
-);
-
 const App = () => {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
+
   return (
     <Provider store={store}>
       <Header />
