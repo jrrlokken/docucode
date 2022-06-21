@@ -4,7 +4,7 @@ import { store } from "./state";
 import CellList from "./components/cell-list";
 import Header from "./components/header";
 
-import "bulmaswatch/superhero/bulmaswatch.min.css";
+import "bulmaswatch/nuclear/bulmaswatch.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = () => {
