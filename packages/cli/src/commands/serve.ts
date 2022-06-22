@@ -8,7 +8,7 @@ export const serveCommand = new Command()
   .command("serve [filename]")
   .description("Open a file for editing")
   .option("-p, --port <number>", "port number for listener", "4000")
-  .action(async (filename = "notebook.js", options: { port: string }) => {
+  .action(async (filename = "notebook.yaml", options: { port: string }) => {
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
       await serve(

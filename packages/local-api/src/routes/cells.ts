@@ -22,8 +22,12 @@ export const createCellsRouter = (filename: string, dir: string) => {
       res.send(yaml.load(result));
     } catch (error: any) {
       if (error.code === "ENOENT") {
-        await fs.writeFile(fullPath, yaml.dump(defaultCells), "utf-8");
-        res.send([]);
+        const defaultResult = await fs.writeFile(
+          fullPath,
+          yaml.dump(defaultCells),
+          "utf-8"
+        );
+        res.send(yaml.load(defaultResult));
       } else {
         throw error;
       }
