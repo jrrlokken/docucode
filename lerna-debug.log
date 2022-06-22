@@ -1,8 +1,0 @@
-44 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin main
-44 error ssh: Could not resolve hostname github.com: Name or service not known
-44 error fatal: Could not read from remote repository.
-44 error
-44 error Please make sure you have the correct access rights
-44 error and the repository exists.
-44 error     at makeError (/home/joshua/.config/yarn/global/node_modules/execa/lib/error.js:60:11)
-44 error     at handlePromise (/home/joshua/.config/yarn/global/node_modules/execa/index.js:118:26)

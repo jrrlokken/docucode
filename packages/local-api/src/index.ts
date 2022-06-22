@@ -29,6 +29,6 @@ export const serve = (
   }
 
   return new Promise<void>((resolve, reject) => {
-    app.listen(4000, resolve).on("error", reject);
+    app.listen(port, resolve).on("error", reject);
   });
 };

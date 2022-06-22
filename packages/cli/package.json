@@ -14,8 +14,8 @@
     "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Joshua Lokken",
+  "license": "MIT",
   "dependencies": {
     "@docucode/local-client": "^2.1.1"
   },
