@@ -2,6 +2,7 @@ import express from "express";
 import yaml from "js-yaml";
 import fs from "fs/promises";
 import path from "path";
+import { defaultCells } from "../default-cells";
 
 interface Cell {
   id: string;
@@ -18,11 +19,10 @@ export const createCellsRouter = (filename: string, dir: string) => {
   router.get("/cells", async (req, res) => {
     try {
       const result = await fs.readFile(fullPath, { encoding: "utf-8" });
-      // res.send(JSON.parse(result));
       res.send(yaml.load(result));
     } catch (error: any) {
       if (error.code === "ENOENT") {
-        await fs.writeFile(fullPath, "[]", "utf-8");
+        await fs.writeFile(fullPath, yaml.dump(defaultCells), "utf-8");
         res.send([]);
       } else {
         throw error;
@@ -32,7 +32,6 @@ export const createCellsRouter = (filename: string, dir: string) => {
 
   router.post("/cells", async (req, res) => {
     const { cells }: { cells: Cell[] } = req.body;
-    // await fs.writeFile(fullPath, JSON.stringify(cells), "utf-8");
     await fs.writeFile(fullPath, yaml.dump(cells), "utf-8");
     res.send({ status: "ok" });
   });
