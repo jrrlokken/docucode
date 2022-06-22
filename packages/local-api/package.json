@@ -24,9 +24,11 @@
   },
   "dependencies": {
     "@docucode/local-client": "^2.1.1",
+    "@types/js-yaml": "^4.0.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "http-proxy-middleware": "^2.0.1"
+    "http-proxy-middleware": "^2.0.1",
+    "js-yaml": "^4.1.0"
   },
   "gitHead": "94312cc2083edd212e32e0889b4b0dfb3fc5889c"
 }
