@@ -1,6 +1,6 @@
 {
   "name": "docucode",
-  "version": "2.1.7",
+  "version": "2.1.8-alpha.0",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -20,7 +20,7 @@
     "@docucode/local-client": "^2.1.1"
   },
   "devDependencies": {
-    "@docucode/local-api": "^2.1.7",
+    "@docucode/local-api": "^2.1.8-alpha.0",
     "@types/node": "^16.11.12",
     "commander": "^8.3.0",
     "esbuild": "0.8.26",
