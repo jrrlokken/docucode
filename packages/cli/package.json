@@ -1,6 +1,6 @@
 {
   "name": "docucode",
-  "version": "2.2.2-alpha.0",
+  "version": "2.2.2",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -17,10 +17,10 @@
   "author": "Joshua Lokken",
   "license": "MIT",
   "dependencies": {
-    "@docucode/local-client": "^2.1.1"
+    "@docucode/local-client": "^2.2.2"
   },
   "devDependencies": {
-    "@docucode/local-api": "^2.2.2-alpha.0",
+    "@docucode/local-api": "^2.2.2",
     "@types/node": "^16.11.12",
     "commander": "^8.3.0",
     "esbuild": "0.8.26",
