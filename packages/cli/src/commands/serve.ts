@@ -22,7 +22,9 @@ export const serveCommand = new Command()
       );
     } catch (error: any) {
       if (error.code === "EDDADRINUSE") {
-        console.error("Port is in use. Try running jbook on another port.");
+        console.error(
+          "Port is in use. Try running docucode on another port with -p <port>"
+        );
       } else {
         console.log("Here's the problem", error.message);
       }
