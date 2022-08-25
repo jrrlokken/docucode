@@ -1,3 +1,17 @@
 # DocuCode
 
 A Node.js CLI with React frontend featuring a fully featured markdown editor and code editor with live npm/css imports and automatic bundling and execution of code in the browser.
+
+To run the app locally, do:
+```
+npx docucode serve
+```
+
+By default, the app creates a file called notebook.yaml in the directory from which it is run.
+You can add an optional filename argument, thusly:
+
+```
+npx docucode serve mynotebook
+```
+
+There is also a web playground running at docucode.joshualokken.tech.  Have fun!
