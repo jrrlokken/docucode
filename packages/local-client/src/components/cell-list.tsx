@@ -1,10 +1,10 @@
-import { Fragment, useEffect } from "react";
-import { useTypedSelector } from "../hooks/use-typed-selector";
-import CellListItem from "./cell-list-item";
-import AddCell from "./add-cell";
-import { useActions } from "../hooks/use-actions";
+import { Fragment, useEffect } from 'react';
+import { useTypedSelector } from '../hooks/use-typed-selector';
+import CellListItem from './cell-list-item';
+import AddCell from './add-cell';
+import { useActions } from '../hooks/use-actions';
 
-import "./cell-list.css";
+import './cell-list.css';
 
 const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cells: { order, data } }) =>
@@ -26,7 +26,7 @@ const CellList: React.FC = () => {
   ));
 
   return (
-    <div className="cell-list">
+    <div className='cell-list'>
       <AddCell forceVisible={cells.length === 0} previousCellId={null} />
       {renderedCells}
     </div>

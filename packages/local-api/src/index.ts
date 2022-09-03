@@ -1,7 +1,7 @@
-import express from "express";
-import { createProxyMiddleware } from "http-proxy-middleware";
-import path from "path";
-import { createCellsRouter } from "./routes/cells";
+import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import path from 'path';
+import { createCellsRouter } from './routes/cells';
 
 export const serve = (
   port: number,
@@ -16,19 +16,19 @@ export const serve = (
   if (useProxy) {
     app.use(
       createProxyMiddleware({
-        target: "http://localhost:5000",
+        target: 'http://localhost:5000',
         ws: true,
-        logLevel: "silent",
+        logLevel: 'silent',
       })
     );
   } else {
     const packagePath = require.resolve(
-      "@docucode/local-client/build/index.html"
+      '@docucode/local-client/build/index.html'
     );
     app.use(express.static(path.dirname(packagePath)));
   }
 
   return new Promise<void>((resolve, reject) => {
-    app.listen(port, resolve).on("error", reject);
+    app.listen(port, resolve).on('error', reject);
   });
 };

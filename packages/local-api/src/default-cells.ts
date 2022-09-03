@@ -1,4 +1,5 @@
-export const defaultCells = `- content: |-
+export const defaultCells = `
+- content: |-
     # Welcome!
 
     Click any text cell (including this one) to start editing.
