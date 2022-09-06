@@ -2,13 +2,12 @@ export const defaultCells = `
 - content: |-
     # Welcome!
 
-    Click any text cell (including this one) to start editing.
-    You have a fully-equipped Markdown editor at your disposal.
+    Click any text cell (including this one) to start editing.  
+    You have a fully-equipped Markdown editor at your disposal.  
+    You can also create a new cell by hover above or below any cell.  
 
-    https://portfolio.joshualokken.tech
-
-    joshualokken@pm.me
-
+    https://portfolio.joshualokken.tech  
+    joshualokken@pm.me  
     https://github.com/jrrlokken
   type: text
   id: sxfry
