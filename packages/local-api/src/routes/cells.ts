@@ -1,13 +1,13 @@
-import express from "express";
-import yaml from "js-yaml";
-import fs from "fs/promises";
-import path from "path";
-import { defaultCells } from "../default-cells";
+import express from 'express';
+import yaml from 'js-yaml';
+import fs from 'fs/promises';
+import path from 'path';
+import { defaultCells } from '../default-cells';
 
 interface Cell {
   id: string;
   content: string;
-  type: "text" | "code";
+  type: 'text' | 'code';
 }
 
 export const createCellsRouter = (filename: string, dir: string) => {
@@ -16,13 +16,12 @@ export const createCellsRouter = (filename: string, dir: string) => {
 
   const fullPath = path.join(dir, filename);
 
-  router.get("/cells", async (req, res) => {
+  router.get('/cells', async (req, res) => {
     try {
-      const result = await fs.readFile(fullPath, { encoding: "utf-8" });
+      const result = await fs.readFile(fullPath, { encoding: 'utf-8' });
       res.send(yaml.load(result));
     } catch (error: any) {
-      if (error.code === "ENOENT") {
-
+      if (error.code === 'ENOENT') {
         // await fs.writeFile(fullPath, yaml.dump(defaultCells), "utf-8");
         // const result = await fs.readFile(fullPath, { encoding: "utf-8" });
         res.send(yaml.load(defaultCells));
@@ -36,17 +35,16 @@ export const createCellsRouter = (filename: string, dir: string) => {
         // console.log(newfile);
         // const result = await fs.readFile(fullPath, { encoding: "utf-8" });
         // res.send(yaml.load(defaultCells));
->>>>>>> Stashed changes
       } else {
         throw error;
       }
     }
   });
 
-  router.post("/cells", async (req, res) => {
+  router.post('/cells', async (req, res) => {
     const { cells }: { cells: Cell[] } = req.body;
-    await fs.writeFile(fullPath, yaml.dump(cells), "utf-8");
-    res.send({ status: "ok" });
+    await fs.writeFile(fullPath, yaml.dump(cells), 'utf-8');
+    res.send({ status: 'ok' });
   });
 
   return router;
