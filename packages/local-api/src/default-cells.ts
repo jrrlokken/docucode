@@ -13,14 +13,11 @@ export const defaultCells = `
   id: sxfry
 - content: |-
     import ReactDOM from 'react-dom';
-    import axios from 'axios';
 
     const App = () => {
-      axios
-        .get('https://portfolio.joshualokken.tech')
-        .then((response) => {
-          show(response);
-        })
+      fetch('https://portfolio.joshualokken.tech')
+        .then((response) => response.json())
+        .then((data) => show(data));
         .catch((error) => {
           show(error);
         });
