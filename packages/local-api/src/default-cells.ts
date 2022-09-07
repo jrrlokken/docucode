@@ -1,6 +1,6 @@
 export const defaultCells = `
 - content: |-
-    # Welcome!
+    # Welcome to DocuCode! 💻
 
     Click any text cell (including this one) to start editing.    
     You have a fully-equipped Markdown editor at your disposal.    
@@ -17,7 +17,7 @@ export const defaultCells = `
     const App = () => {
       fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then((response) => response.json())
-        .then((data) => show(data));
+        .then((data) => show(data))
         .catch((error) => {
           show(error);
         });
