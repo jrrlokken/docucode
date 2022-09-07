@@ -12,6 +12,8 @@ export const defaultCells = `
   type: text
   id: sxfry
 - content: |-
+    // This is a code cell.  You can use whatever npm modules you need,
+    // DocuCode will automatically import them for you.
     import ReactDOM from 'react-dom';
 
     const App = () => {
