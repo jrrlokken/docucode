@@ -27,14 +27,6 @@ export const createCellsRouter = (filename: string, dir: string) => {
         res.send(yaml.load(defaultCells));
 
         console.log(error.code, error.message);
-        // const newfile = await fs.writeFile(
-        //   fullPath,
-        //   yaml.dump(defaultCells),
-        //   "utf-8"
-        // );
-        // console.log(newfile);
-        // const result = await fs.readFile(fullPath, { encoding: "utf-8" });
-        // res.send(yaml.load(defaultCells));
       } else {
         throw error;
       }
