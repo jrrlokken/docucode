@@ -1,14 +1,14 @@
-import { Command } from "commander";
-import { serve } from "@docucode/local-api";
-import path from "path";
+import { Command } from 'commander';
+import { serve } from '@docucode/local-api';
+import path from 'path';
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === 'production';
 
 export const serveCommand = new Command()
-  .command("serve [filename]")
-  .description("Open a file for editing")
-  .option("-p, --port <number>", "port number for listener", "4005")
-  .action(async (filename = "notebook.yaml", options: { port: string }) => {
+  .command('serve [filename]')
+  .description('Open a file for editing')
+  .option('-p, --port <number>', 'port number for listener', '4005')
+  .action(async (filename = 'notebook.yaml', options: { port: string }) => {
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
       await serve(
@@ -21,9 +21,9 @@ export const serveCommand = new Command()
         `Opened ${filename}. Navigate to http://localhost:${options.port} to edit.`
       );
     } catch (error: any) {
-      if (error.code === "EDDADRINUSE") {
+      if (error.code === 'EDDADRINUSE') {
         console.error(
-          "Port is in use. Try running docucode on another port with -p <port>"
+          'Port is in use. Try running docucode on another port with -p <port>'
         );
       } else {
         console.log("Here's the problem", error.message);

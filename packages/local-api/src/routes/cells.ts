@@ -24,8 +24,6 @@ export const createCellsRouter = (filename: string, dir: string) => {
       if (error.code === 'ENOENT') {
         console.log(fullPath);
         res.send(yaml.load(defaultCells));
-
-        console.log(error.code, error.message);
       } else {
         throw error;
       }

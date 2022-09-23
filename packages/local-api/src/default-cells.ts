@@ -3,7 +3,7 @@ export const defaultCells = `
     # Welcome to DocuCode! 💻
 
     Click any text cell (including this one) to start editing.    
-    You have a fully-equipped Markdown editor at your disposal.    
+    You have a full featured Markdown editor at your disposal.    
     You can also create a new cell by hovering above or below any cell.    
 
     https://portfolio.joshualokken.tech    
