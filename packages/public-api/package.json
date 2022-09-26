@@ -1,0 +1,55 @@
+{
+  "name": "public-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "prod": "yarn build && yarn start",
+    "start": "node dist/index.js",
+    "format": "prettier-standard '**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^10.0.28-alpha",
+    "@types/body-parser": "^1.19.1",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/node": "^16.11.0",
+    "@types/nodemon": "^1.19.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "nodemon": "^2.0.13",
+    "prettier-standard": "^16.4.1",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.ts": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
+  }
+}
